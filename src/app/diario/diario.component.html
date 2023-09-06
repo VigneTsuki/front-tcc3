@@ -1,0 +1,35 @@
+<div class="container">
+    <select [(ngModel)]="materiaSelecionada" class="select-box">
+      <option *ngFor="let opcaoMateria of opcoesMateria" [ngValue]="opcaoMateria">{{ opcaoMateria.nome }}</option>
+    </select>
+  
+    <select [(ngModel)]="anoSelecionado" class="select-box">
+      <option *ngFor="let opcaoAno of opcoesAno" [ngValue]="opcaoAno">{{ opcaoAno }}</option>
+    </select>
+  
+    <select [(ngModel)]="semestreSelecionado" class="select-box">
+      <option *ngFor="let opcaoSemestre of opcoesSemestre" [ngValue]="opcaoSemestre">{{ opcaoSemestre }}</option>
+    </select>
+    <button (click)="atualizarTabela()" class="styled-button">Atualizar</button>
+  </div>
+
+
+
+<div *ngIf="presencas != null && presencas.length != 0" class="tabela">
+    <table>
+        <tr>
+            <th style="padding-left: 150px;padding-right: 150px;">Aluno</th>
+            <th *ngFor="let data of diasAula">{{ data | date:'dd/MM' }}</th>
+        </tr>
+        <tr *ngFor="let aluno of alunos">
+            <td>{{aluno}}</td>
+            <ng-container *ngFor="let pres of presencas">
+                <td *ngIf="pres.nomeAluno === aluno"
+                    [class.green-cell]="pres.presente === true"
+                    [class.red-cell]="pres.presente === false"
+                ></td>
+            </ng-container>
+        </tr>
+    </table>
+</div>
+<h1 *ngIf="presencas == null || presencas.length == 0" >Nada encontrado</h1>

@@ -1,0 +1,18 @@
+.header {
+    background-color: black;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+  
+  .header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+
+  .header a.router-link-active {
+    font-weight: bold;
+  }
