@@ -35,12 +35,22 @@ export class MateriaLista {
   id?: string;
 }
 
+export class Sala {
+  salas?: SalaLista[]
+}
+
+export class SalaLista {
+  bloco?: string;
+  numeracao?: string;
+  id?: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
 
-  endpoint = 'http://52.90.136.176:3000';
+  endpoint = 'http://localhost:5165';
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({
@@ -64,6 +74,22 @@ export class CrudService {
     return this.httpClient
       .get<Materia>(this.endpoint + '/Materia')
       .pipe(retry(1), catchError(this.processError));
+  }
+
+  BuscarSalas(): Observable<Sala> {
+    return this.httpClient
+      .get<Sala>(this.endpoint + '/Sala')
+      .pipe(retry(1), catchError(this.processError));
+  }
+
+  CriarMateria(materiaData: any): Observable<any> {
+    return this.httpClient.post(this.endpoint + '/Materia', materiaData)
+      .pipe(retry(1),catchError(this.processError));
+  }
+
+  CriarCronograma(cronogramaData: any): Observable<any> {
+    return this.httpClient.post(this.endpoint + '/Cronograma', cronogramaData)
+      .pipe(retry(1),catchError(this.processError));
   }
 
   processError(err: any) {

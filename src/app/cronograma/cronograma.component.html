@@ -1,0 +1,23 @@
+<div class="container">
+    <select [(ngModel)]="materiaSelecionada" class="select-box">
+        <option *ngFor="let opcaoMateria of opcoesMateria" [ngValue]="opcaoMateria">{{ opcaoMateria.nome }}</option>
+      </select>
+
+    <select [(ngModel)]="salaSelecionada" class="select-box">
+        <option *ngFor="let opcaoSala of opcoesSala" [ngValue]="opcaoSala">{{ opcaoSala.bloco }} - {{ opcaoSala.numeracao }}</option>
+    </select>
+
+    <input [(ngModel)]="dataInicioAula" placeholder="Data início">
+
+    <input [(ngModel)]="dataFimAula" placeholder="Data fim">
+
+    <select [(ngModel)]="anoSelecionado" class="select-box">
+        <option *ngFor="let opcaoAno of opcoesAno" [ngValue]="opcaoAno">{{ opcaoAno }}</option>
+    </select>
+    
+    <select [(ngModel)]="semestreSelecionado" class="select-box">
+        <option *ngFor="let opcaoSemestre of opcoesSemestre" [ngValue]="opcaoSemestre">{{ opcaoSemestre }}</option>
+    </select>
+
+    <button (click)="cadastrarCronograma()" class="styled-button">Cadastrar</button>
+</div>

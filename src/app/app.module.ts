@@ -8,13 +8,19 @@ import { HomeComponent } from './home/home.component';
 import { DiarioComponent } from './diario/diario.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MateriaComponent } from './materia/materia.component';
+import { CronogramaComponent } from './cronograma/cronograma.component';
+import { MatriculaComponent } from './matricula/matricula.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DiarioComponent,
-    HeaderComponent
+    HeaderComponent,
+    MateriaComponent,
+    CronogramaComponent,
+    MatriculaComponent
   ],
   imports: [
     BrowserModule,
