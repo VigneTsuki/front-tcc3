@@ -45,6 +45,16 @@ export class SalaLista {
   id?: string;
 }
 
+export class Aluno {
+  alunos?: AlunoLista[]
+}
+
+export class AlunoLista {
+  codigo?: string;
+  nome?: string;
+  id?: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -82,6 +92,12 @@ export class CrudService {
       .pipe(retry(1), catchError(this.processError));
   }
 
+  BuscarAlunos(): Observable<Aluno> {
+    return this.httpClient
+      .get<Aluno>(this.endpoint + '/Alunos')
+      .pipe(retry(1), catchError(this.processError));
+  }
+
   CriarMateria(materiaData: any): Observable<any> {
     return this.httpClient.post(this.endpoint + '/Materia', materiaData)
       .pipe(retry(1),catchError(this.processError));
@@ -89,6 +105,11 @@ export class CrudService {
 
   CriarCronograma(cronogramaData: any): Observable<any> {
     return this.httpClient.post(this.endpoint + '/Cronograma', cronogramaData)
+      .pipe(retry(1),catchError(this.processError));
+  }
+
+  CriarMatricula(idAluno: string, idMateria: string): Observable<any> {
+    return this.httpClient.post(this.endpoint + '/Matricular?idaluno=' + idAluno + '&idmateria=' + idMateria, null)
       .pipe(retry(1),catchError(this.processError));
   }
 

@@ -1,1 +1,11 @@
-<p>matricula works!</p>
+<div class="container">
+    <select [(ngModel)]="materiaSelecionada" class="select-box">
+        <option *ngFor="let opcaoMateria of opcoesMateria" [ngValue]="opcaoMateria">{{ opcaoMateria.nome }}</option>
+      </select>
+
+    <select [(ngModel)]="alunoSelecionado" class="select-box">
+        <option *ngFor="let opcaoAluno of opcoesAluno" [ngValue]="opcaoAluno">{{ opcaoAluno.codigo }} - {{ opcaoAluno.nome }}</option>
+    </select>
+
+    <button (click)="cadastrarAluno()" class="styled-button">Cadastrar</button>
+</div>
