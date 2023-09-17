@@ -26,6 +26,7 @@ export class PresencaLista {
   presente?: string;
   dataEntrada?: string;
   dataSaida?: string;
+  aulaJaRealizada? :string;
 }
 
 export class Materia {

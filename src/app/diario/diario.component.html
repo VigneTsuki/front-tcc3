@@ -13,8 +13,6 @@
     <button (click)="atualizarTabela()" class="styled-button">Atualizar</button>
   </div>
 
-
-
 <div *ngIf="presencas != null && presencas.length != 0" class="tabela">
     <table>
         <tr>
@@ -25,8 +23,8 @@
             <td>{{aluno}}</td>
             <ng-container *ngFor="let pres of presencas">
                 <td *ngIf="pres.nomeAluno === aluno"
-                    [class.green-cell]="pres.presente === true"
-                    [class.red-cell]="pres.presente === false">
+                    [class.green-cell]="pres.presente === true && pres.aulaJaRealizada === true"
+                    [class.red-cell]="pres.presente === false && pres.aulaJaRealizada === true">
                 <div>{{ pres.dataEntrada }}</div>
                 <div>{{ pres.dataSaida }}</div>
                 <div *ngIf="pres.dataSaida == null">-</div>
