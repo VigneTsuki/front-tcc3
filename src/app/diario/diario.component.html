@@ -27,6 +27,7 @@
                     [class.red-cell]="pres.presente === false && pres.aulaJaRealizada === true">
                 <div>{{ pres.dataEntrada }}</div>
                 <div>{{ pres.dataSaida }}</div>
+                <div *ngIf="pres.dataEntrada == null">-</div>
                 <div *ngIf="pres.dataSaida == null">-</div>
               </td>
             </ng-container>
