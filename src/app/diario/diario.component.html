@@ -26,8 +26,11 @@
             <ng-container *ngFor="let pres of presencas">
                 <td *ngIf="pres.nomeAluno === aluno"
                     [class.green-cell]="pres.presente === true"
-                    [class.red-cell]="pres.presente === false"
-                ></td>
+                    [class.red-cell]="pres.presente === false">
+                <div>{{ pres.dataEntrada }}</div>
+                <div>{{ pres.dataSaida }}</div>
+                <div *ngIf="pres.dataSaida == null">-</div>
+              </td>
             </ng-container>
         </tr>
     </table>

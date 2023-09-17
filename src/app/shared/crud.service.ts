@@ -24,6 +24,8 @@ export class PresencaLista {
   idCronograma?: string;
   nomeAluno?: string;
   presente?: string;
+  dataEntrada?: string;
+  dataSaida?: string;
 }
 
 export class Materia {
