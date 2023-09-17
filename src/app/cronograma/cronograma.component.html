@@ -16,18 +16,16 @@
     </select>
 
     <mat-form-field>
-      <input matInput [(ngModel)]="dataAula" [matDatepicker]="picker1" placeholder="Data">
+      <input matInput [(ngModel)]="dataAula" [matDatepicker]="picker1">
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
       <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
     
     <mat-form-field>
-      <mat-label>Horário inicio Aula</mat-label>
       <input [(ngModel)]="horarioInicioAula" matInput type="time" placeholder=""/>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Horário fim Aula</mat-label>
       <input [(ngModel)]="horarioFimAula" matInput type="time" placeholder=""/>
     </mat-form-field>
 
