@@ -11,6 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MateriaComponent } from './materia/materia.component';
 import { CronogramaComponent } from './cronograma/cronograma.component';
 import { MatriculaComponent } from './matricula/matricula.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { MatriculaComponent } from './matricula/matricula.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
     FormsModule
   ],
   providers: [],
