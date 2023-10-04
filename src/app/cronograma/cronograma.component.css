@@ -48,3 +48,24 @@
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
   }
   
+/* Estilos para tamanhos de tela maiores */
+.date-time-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5mm;
+  margin-top: 10px;
+}
+
+/* Estilos para tamanhos de tela menores (media query) */
+@media screen and (max-width: 768px) {
+  .date-time-inputs {
+      flex-direction: column; /* Coloca os elementos em uma coluna */
+      align-items: flex-start; /* Alinha os elementos à esquerda */
+  }
+}
+
+.select-label{
+  text-align: start;
+  padding-left: 5px;
+}

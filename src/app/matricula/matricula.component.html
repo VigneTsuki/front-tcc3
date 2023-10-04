@@ -1,11 +1,25 @@
 <div class="container">
-    <select [(ngModel)]="materiaSelecionada" class="select-box">
-        <option *ngFor="let opcaoMateria of opcoesMateria" [ngValue]="opcaoMateria">{{ opcaoMateria.nome }}</option>
-      </select>
+    <div class="input-group">
+        <div class="select-label">
+            <label for="materiaSelecionada">Matéria:</label>
+        </div>
+        <div class="select-field">
+            <select [(ngModel)]="materiaSelecionada" class="select-box">
+                <option *ngFor="let opcaoMateria of opcoesMateria" [ngValue]="opcaoMateria">{{ opcaoMateria.nome }}</option>
+              </select>
+        </div>
+    </div>
 
-    <select [(ngModel)]="alunoSelecionado" class="select-box">
-        <option *ngFor="let opcaoAluno of opcoesAluno" [ngValue]="opcaoAluno">{{ opcaoAluno.codigo }} - {{ opcaoAluno.nome }}</option>
-    </select>
+    <div class="input-group">
+        <div class="select-label">
+            <label for="materiaSelecionada">Aluno:</label>
+        </div>
+        <div class="select-field">
+            <select [(ngModel)]="alunoSelecionado" class="select-box">
+                <option *ngFor="let opcaoAluno of opcoesAluno" [ngValue]="opcaoAluno">{{ opcaoAluno.codigo }} - {{ opcaoAluno.nome }}</option>
+            </select>
+        </div>
+    </div>
 
     <button (click)="cadastrarAluno()" class="styled-button">Cadastrar</button>
 </div>

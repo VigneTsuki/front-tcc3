@@ -1,33 +1,66 @@
 <div class="container">
-    <select [(ngModel)]="materiaSelecionada" class="select-box">
-        <option *ngFor="let opcaoMateria of opcoesMateria" [ngValue]="opcaoMateria">{{ opcaoMateria.nome }}</option>
-      </select>
+  <div class="input-group">
+      <div class="select-label">
+          <label for="materiaSelecionada">Matéria:</label>
+      </div>
+      <div class="select-field">
+          <select [(ngModel)]="materiaSelecionada" class="select-box" id="materiaSelecionada">
+              <option *ngFor="let opcaoMateria of opcoesMateria" [ngValue]="opcaoMateria">{{ opcaoMateria.nome }}</option>
+          </select>
+      </div>
+  </div>
 
-    <select [(ngModel)]="salaSelecionada" class="select-box">
-        <option *ngFor="let opcaoSala of opcoesSala" [ngValue]="opcaoSala">{{ opcaoSala.bloco }} - {{ opcaoSala.numeracao }}</option>
-    </select>
+  <div class="input-group">
+      <div class="select-label">
+          <label for="salaSelecionada">Sala:</label>
+      </div>
+      <div class="select-field">
+          <select [(ngModel)]="salaSelecionada" class="select-box" id="salaSelecionada">
+              <option *ngFor="let opcaoSala of opcoesSala" [ngValue]="opcaoSala">{{ opcaoSala.bloco }} - {{ opcaoSala.numeracao }}</option>
+          </select>
+      </div>
+  </div>
 
-    <select [(ngModel)]="anoSelecionado" class="select-box">
-      <option *ngFor="let opcaoAno of opcoesAno" [ngValue]="opcaoAno">{{ opcaoAno }}</option>
-    </select>
-  
-    <select [(ngModel)]="semestreSelecionado" class="select-box">
-        <option *ngFor="let opcaoSemestre of opcoesSemestre" [ngValue]="opcaoSemestre">{{ opcaoSemestre }}</option>
-    </select>
+  <div class="input-group">
+      <div class="select-label">
+          <label for="anoSelecionado">Ano:</label>
+      </div>
+      <div class="select-field">
+          <select [(ngModel)]="anoSelecionado" class="select-box" id="anoSelecionado">
+              <option *ngFor="let opcaoAno of opcoesAno" [ngValue]="opcaoAno">{{ opcaoAno }}</option>
+          </select>
+      </div>
+  </div>
 
-    <mat-form-field>
-      <input matInput [(ngModel)]="dataAula" [matDatepicker]="picker1">
-      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-      <mat-datepicker #picker1></mat-datepicker>
-    </mat-form-field>
-    
-    <mat-form-field>
-      <input [(ngModel)]="horarioInicioAula" matInput type="time" placeholder=""/>
-    </mat-form-field>
+  <div class="input-group">
+      <div class="select-label">
+          <label for="semestreSelecionado">Semestre:</label>
+      </div>
+      <div class="select-field">
+          <select [(ngModel)]="semestreSelecionado" class="select-box" id="semestreSelecionado">
+              <option *ngFor="let opcaoSemestre of opcoesSemestre" [ngValue]="opcaoSemestre">{{ opcaoSemestre }}</option>
+          </select>
+      </div>
+  </div>
 
-    <mat-form-field>
-      <input [(ngModel)]="horarioFimAula" matInput type="time" placeholder=""/>
-    </mat-form-field>
+  <div class="date-time-inputs">
+      <mat-form-field>
+          <label>Data da Aula:</label>
+          <input matInput [(ngModel)]="dataAula" [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      
+      <mat-form-field>
+          <label>Horário de Início:</label>
+          <input [(ngModel)]="horarioInicioAula" matInput type="time" placeholder=""/>
+      </mat-form-field>
 
-    <button (click)="cadastrarCronograma()" class="styled-button">Cadastrar</button>
+      <mat-form-field>
+          <label>Horário de Fim:</label>
+          <input [(ngModel)]="horarioFimAula" matInput type="time" placeholder=""/>
+      </mat-form-field>
+  </div>
+
+  <button (click)="cadastrarCronograma()" class="styled-button">Cadastrar</button>
 </div>

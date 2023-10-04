@@ -85,13 +85,13 @@ export class CrudService {
 
   BuscarMaterias(): Observable<Materia> {
     return this.httpClient
-      .get<Materia>(this.endpoint + '/Materia')
+      .get<Materia>(this.endpoint + '/Materias')
       .pipe(retry(1), catchError(this.processError));
   }
 
   BuscarSalas(): Observable<Sala> {
     return this.httpClient
-      .get<Sala>(this.endpoint + '/Sala')
+      .get<Sala>(this.endpoint + '/Salas')
       .pipe(retry(1), catchError(this.processError));
   }
 
