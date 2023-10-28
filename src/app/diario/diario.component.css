@@ -3,86 +3,78 @@
     overflow-x: auto;
 }
 
-/* Centralizar a tabela */
 table {
     margin: 0 auto;
     font-size: 15px;
     border-collapse: collapse;
-    width: 80%; /* Defina a largura desejada */
+    width: 80%; 
     border: 3px solid #000;
     margin-top: 10px;
-  }
+}
   
-  /* Estilizar cabeçalho da tabela */
-  th {
-    background-color: #333; /* Fundo cinza mais forte */
-    color: white; /* Cor do texto branco */
-    text-align: center;
-    padding-left: 7px;
-    padding-right: 7px;
-  }
+th {
+  background-color: #333; 
+  color: white;
+  text-align: center;
+  padding-left: 7px;
+  padding-right: 7px;
+}
   
-  /* Estilizar células da tabela */
-  td {
-    text-align: center;
-  }
-  
-  /* Estilo para células com pres.presente igual a true (verde) */
+td {
+  text-align: center;
+}
+
 .green-cell {
-    background-color: green;
-  }
-  
-  .red-cell {
-    background-color: red;
-  }
+  background-color: green;
+}
 
-  td, th {
-    border: 3px solid #000; /* Borda de 3px com cor preta */
-  }
+.red-cell {
+  background-color: red;
+}
 
+td, th {
+  border: 3px solid #000; 
+}
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    max-width: 1000px; /* Ajuste conforme necessário */
-  }
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 1000px; 
+}
   
-  .select-box {
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 5px;
-    width: 100%;
-    background-color: #f9f9f9;
-    /* Estilos adicionais a gosto */
-  }
+.select-box {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  width: 100%;
+  background-color: #f9f9f9;
+}
   
-  .select-box:focus {
-    outline: none;
-    border-color: #007bff; /* Cor da borda quando selecionado */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra quando selecionado */
-  }
+.select-box:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
   
-  .styled-button {
-    padding: 5px 20px; /* Espaçamento interno do botão */
-    font-size: 16px;
-    background-color: #007bff; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
-
-    /* Adicione mais estilos conforme necessário */
+.styled-button {
+  padding: 5px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .styled-button:hover {
-    background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+  background-color: #0056b3;
 }
 
 h1{

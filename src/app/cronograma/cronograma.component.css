@@ -7,48 +7,47 @@
     margin-top: 50px;
   }
   
-  input {
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 250px;
-    font-size: 16px;
-  }
+input {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  font-size: 16px;
+}
   
-  button {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
   
-  button:hover {
-    background-color: #0056b3;
-  }
+button:hover {
+  background-color: #0056b3;
+}
+
+.select-box {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  width: 273px;
+  background-color: #f9f9f9;
+}
   
-  .select-box {
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 5px;
-    width: 273px;
-    background-color: #f9f9f9;
-  }
+.select-box:focus {
+  outline: none;
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
   
-  .select-box:focus {
-    outline: none;
-    border-color: #007bff; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
-  }
-  
-/* Estilos para tamanhos de tela maiores */
 .date-time-inputs {
   display: flex;
   justify-content: space-between;
@@ -57,15 +56,15 @@
   margin-top: 10px;
 }
 
-/* Estilos para tamanhos de tela menores (media query) */
-@media screen and (max-width: 768px) {
-  .date-time-inputs {
-      flex-direction: column; /* Coloca os elementos em uma coluna */
-      align-items: flex-start; /* Alinha os elementos à esquerda */
-  }
-}
-
 .select-label{
   text-align: start;
   padding-left: 5px;
 }
+
+@media screen and (max-width: 768px) {
+  .date-time-inputs {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
+
