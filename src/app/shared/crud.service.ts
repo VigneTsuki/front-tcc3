@@ -63,7 +63,7 @@ export class AlunoLista {
 })
 export class CrudService {
 
-  endpoint = 'http://3.81.199.254:3000';
+  endpoint = 'http://vigne.moe:3000';
   constructor(private httpClient: HttpClient) {}
   httpHeader = {
     headers: new HttpHeaders({
