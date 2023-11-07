@@ -22,6 +22,8 @@ export class CronogramaComponent {
 
   mesAjustado: number = 0
   mesAjustadoStr: string = ''
+  diaAjustado: number = 0
+  diaAjustadoStr: string = ''
 
   constructor(public crudService: CrudService) {}
   ngOnInit() {
@@ -49,12 +51,19 @@ export class CronogramaComponent {
     } else{
       this.mesAjustadoStr = this.mesAjustado.toString()
     }
+
+    this.diaAjustado = (this.dataAula?.getDate() ?? 0);
+    if(this.diaAjustado < 10){
+      this.diaAjustadoStr = "0" + this.diaAjustado.toString()
+    } else{
+      this.diaAjustadoStr = this.diaAjustado.toString()
+    }
     
     const cronogramData = {
       IdMateria: this.materiaSelecionada.id,
       IdSala: this.salaSelecionada.id,
-      DataInicioAula: this.dataAula?.getFullYear() + "-" + this.mesAjustadoStr + "-" + this.dataAula?.getDate() + " " + this.horarioInicioAula + ":00",
-      DataFimAula: this.dataAula?.getFullYear() + "-" + this.mesAjustadoStr + "-" + this.dataAula?.getDate() + " " + this.horarioFimAula + ":00",
+      DataInicioAula: this.dataAula?.getFullYear() + "-" + this.mesAjustadoStr + "-" + this.diaAjustadoStr + " " + this.horarioInicioAula + ":00",
+      DataFimAula: this.dataAula?.getFullYear() + "-" + this.mesAjustadoStr + "-" + this.diaAjustadoStr + " " + this.horarioFimAula + ":00",
       Ano: this.anoSelecionado,
       Semestre: this.semestreSelecionado
     };
